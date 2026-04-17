@@ -502,6 +502,14 @@
                     <p class="text-gray-500 max-w-2xl mx-auto text-base md:text-lg">Découvrez l'intégralité de nos complexes, villas sur la baie, résidences exclusives et chambres d'hôtel (Plus de 45 offres).</p>
                 </div>
 
+                <!-- Search Bar -->
+                <div class="max-w-2xl mx-auto mb-8 relative">
+                    <input type="text" id="search-input" placeholder="Rechercher une villa, un lieu, un équipement (ex: jacuzzi)..." 
+                           class="input-modern w-full pl-14 pr-4 py-4 rounded-2xl text-dark text-base shadow-sm focus:shadow-md transition-all"
+                           onkeyup="handleSearch()">
+                    <i class="fa-solid fa-magnifying-glass absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 text-lg"></i>
+                </div>
+
                 <!-- Filtres -->
                 <div class="flex flex-wrap justify-center gap-3 mb-12">
                     <button onclick="filterCatalog('all')" id="btn-filter-all" class="filter-btn active px-5 py-2.5 rounded-full border border-gray-300 font-medium text-sm transition-all hover:border-dark">Tous</button>
@@ -536,7 +544,7 @@
                         
                         <div class="relative z-10">
                             <h2 class="font-display text-3xl sm:text-4xl font-bold mb-4">Passez à<br><span class="text-brand-500">l'action.</span></h2>
-                            <p class="text-gray-400 mb-10 sm:mb-12 text-base sm:text-lg">Contactez-nous directement ou utilisez le formulaire pour une réservation rapide via WhatsApp.</p>
+                            <p class="text-gray-400 mb-10 sm:mb-12 text-base sm:text-lg">Contactez-nous directement ou utilisez le formulaire pour une réservation rapide via WhatsApp ou Email.</p>
                             
                             <div class="space-y-6 sm:space-y-8">
                                 <div class="flex items-start gap-4">
@@ -547,6 +555,16 @@
                                         <p class="text-xs sm:text-sm text-gray-400 mb-1">Appelez-nous</p>
                                         <a href="tel:+2250777240278" class="block font-medium text-base sm:text-lg hover:text-brand-500 transition-colors">+225 07 77 24 02 78</a>
                                         <a href="tel:+2250716174833" class="block font-medium text-base sm:text-lg hover:text-brand-500 transition-colors">+225 07 16 17 48 33</a>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-white/10 rounded-xl flex items-center justify-center shrink-0">
+                                        <i class="fa-solid fa-envelope text-brand-500 text-lg sm:text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs sm:text-sm text-gray-400 mb-1">Email</p>
+                                        <a href="mailto:sonayewenceslas@gmail.com" class="block font-medium text-base sm:text-lg hover:text-brand-500 transition-colors break-all">sonayewenceslas@gmail.com</a>
                                     </div>
                                 </div>
 
@@ -572,18 +590,21 @@
                             </div>
                         </div>
 
-                        <!-- MODIFICATIONS ICI : Liens Facebook & WhatsApp -->
+                        <!-- Liens Facebook, WhatsApp & Email -->
                         <div class="mt-10 sm:mt-12 flex gap-4 relative z-10">
-                            <a href="https://www.facebook.com/" target="_blank" class="w-10 h-10 sm:w-12 sm:h-12 border border-white/20 rounded-full flex items-center justify-center hover:bg-brand-500 hover:border-brand-500 transition-all">
+                            <a href="https://www.facebook.com/Franckcurtis28" target="_blank" class="w-10 h-10 sm:w-12 sm:h-12 border border-white/20 rounded-full flex items-center justify-center hover:bg-brand-500 hover:border-brand-500 transition-all">
                                 <i class="fa-brands fa-facebook-f text-sm sm:text-base"></i>
                             </a>
                             <a href="https://wa.me/2250777240278" target="_blank" class="w-10 h-10 sm:w-12 sm:h-12 border border-white/20 rounded-full flex items-center justify-center hover:bg-[#25D366] hover:border-[#25D366] transition-all">
                                 <i class="fa-brands fa-whatsapp text-sm sm:text-base"></i>
                             </a>
+                            <a href="mailto:sonayewenceslas@gmail.com" target="_blank" class="w-10 h-10 sm:w-12 sm:h-12 border border-white/20 rounded-full flex items-center justify-center hover:bg-brand-500 hover:border-brand-500 transition-all">
+                                <i class="fa-solid fa-envelope text-sm sm:text-base"></i>
+                            </a>
                         </div>
                     </div>
 
-                    <!-- Right: WhatsApp Form -->
+                    <!-- Right: WhatsApp & Email Form -->
                     <div class="lg:w-3/5 p-6 sm:p-8 md:p-12 lg:p-16">
                         <h3 class="font-display text-2xl sm:text-3xl font-bold text-dark mb-6 sm:mb-8">Formulaire de Réservation</h3>
                         
@@ -633,9 +654,14 @@
                                 <textarea id="message" rows="3" placeholder="Précisez vos besoins (nombre de personnes, heures de location...)" class="input-modern w-full px-4 sm:px-5 py-3.5 sm:py-4 rounded-xl text-dark text-base resize-none"></textarea>
                             </div>
 
-                            <button type="submit" class="w-full bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#128C7E] hover:to-[#075E54] text-white font-bold text-base sm:text-lg py-4 sm:py-5 rounded-xl shadow-[0_15px_30px_-10px_rgba(37,211,102,0.4)] transform hover:-translate-y-1 transition-all flex justify-center items-center gap-2 sm:gap-3">
-                                <i class="fa-brands fa-whatsapp text-xl sm:text-2xl"></i> <span class="truncate">Envoyer ma demande via WhatsApp</span>
-                            </button>
+                            <div class="flex flex-col gap-3">
+                                <button type="submit" class="w-full bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#128C7E] hover:to-[#075E54] text-white font-bold text-base sm:text-lg py-4 sm:py-5 rounded-xl shadow-[0_15px_30px_-10px_rgba(37,211,102,0.4)] transform hover:-translate-y-1 transition-all flex justify-center items-center gap-2 sm:gap-3">
+                                    <i class="fa-brands fa-whatsapp text-xl sm:text-2xl"></i> <span class="truncate">Envoyer ma demande via WhatsApp</span>
+                                </button>
+                                <button type="button" onclick="sendToEmail()" class="w-full bg-dark hover:bg-gray-800 text-white font-bold text-base sm:text-lg py-4 sm:py-5 rounded-xl shadow-wahoo transform hover:-translate-y-1 transition-all flex justify-center items-center gap-2 sm:gap-3">
+                                    <i class="fa-solid fa-envelope text-xl sm:text-2xl"></i> <span class="truncate">Envoyer ma demande par Email</span>
+                                </button>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -645,15 +671,73 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-gray-100 py-6 sm:py-8 mt-auto z-10 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <div class="flex items-center gap-2">
-                <img src="https://i.postimg.cc/FFxPsXst/Whats-App-Image-2026-04-14-at-17-36-58.jpg" alt="Logo Baie des Milliardaires" class="w-8 h-8 rounded-lg object-cover shrink-0 shadow-sm">
-                <span class="font-display font-bold text-dark text-sm sm:text-base">BAIE DES MILLIARDAIRES</span>
+    <footer class="bg-white border-t border-gray-200 pt-16 pb-8 mt-auto z-10 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                
+                <!-- Brand & Description -->
+                <div class="flex flex-col gap-6">
+                    <a href="#" onclick="navigate('accueil')" class="flex items-center gap-3 group shrink-0">
+                        <img src="https://i.postimg.cc/FFxPsXst/Whats-App-Image-2026-04-14-at-17-36-58.jpg" alt="Logo Baie des Milliardaires" class="w-12 h-12 rounded-xl object-cover transform group-hover:scale-105 transition-transform shadow-sm">
+                        <div class="flex flex-col">
+                            <span class="font-display font-bold text-xl text-dark leading-none">BAIE DES</span>
+                            <span class="font-display font-bold text-brand-500 text-sm leading-none">MILLIARDAIRES</span>
+                        </div>
+                    </a>
+                    <p class="text-gray-500 text-sm sm:text-base leading-relaxed">
+                        L'agence de référence pour toutes vos envies sur la Baie des Milliardaires. Expertise locale, réseau exclusif et service premium.
+                    </p>
+                </div>
+
+                <!-- Liens Rapides -->
+                <div>
+                    <h4 class="font-display font-bold text-lg text-dark mb-6">Liens Rapides</h4>
+                    <ul class="space-y-3">
+                        <li><button onclick="navigate('apropos')" class="text-gray-500 hover:text-brand-500 transition-colors text-sm sm:text-base">Notre Histoire</button></li>
+                        <li><button onclick="navigate('services')" class="text-gray-500 hover:text-brand-500 transition-colors text-sm sm:text-base">Nos Services</button></li>
+                        <li><button onclick="navigate('catalogue')" class="text-gray-500 hover:text-brand-500 transition-colors text-sm sm:text-base">Catalogue Hébergements</button></li>
+                        <li><button onclick="navigate('loisirs')" class="text-gray-500 hover:text-brand-500 transition-colors text-sm sm:text-base">Loisirs & Formules</button></li>
+                        <li><button onclick="navigate('reservation')" class="text-brand-500 font-semibold hover:text-brand-600 transition-colors text-sm sm:text-base">Réserver maintenant</button></li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Accès -->
+                <div>
+                    <h4 class="font-display font-bold text-lg text-dark mb-6">Contact & Accès</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <div class="mt-1 w-5 flex justify-center shrink-0"><i class="fa-solid fa-location-dot text-brand-500 text-lg"></i></div>
+                            <span class="text-gray-500 text-sm sm:text-base">Siège social : Baie des Milliardaires, Île Boulay, Abidjan, Côte d'Ivoire</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-5 flex justify-center shrink-0"><i class="fa-solid fa-phone text-brand-500 text-lg"></i></div>
+                            <a href="tel:+2250777240278" class="text-gray-500 hover:text-brand-500 transition-colors text-sm sm:text-base">+225 07 77 24 02 78</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-5 flex justify-center shrink-0"><i class="fa-brands fa-whatsapp text-brand-500 text-lg"></i></div>
+                            <a href="https://wa.me/2250777240278" target="_blank" class="text-gray-500 hover:text-brand-500 transition-colors text-sm sm:text-base">Contactez-nous sur WhatsApp</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-5 flex justify-center shrink-0"><i class="fa-solid fa-envelope text-brand-500 text-lg"></i></div>
+                            <a href="mailto:sonayewenceslas@gmail.com" class="text-gray-500 hover:text-brand-500 transition-colors text-sm sm:text-base">sonayewenceslas@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <p class="text-gray-500 text-xs sm:text-sm text-center md:text-right">
-                &copy; 2026 Tous droits réservés. <br class="md:hidden">Fondé par Franck Sonaye.
-            </p>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-400 text-xs sm:text-sm text-center md:text-left">
+                    &copy; 2026 Baie des Milliardaires Service. Tous droits réservés.
+                </p>
+                <div class="flex gap-4 items-center">
+                    <a href="https://www.facebook.com/Franckcurtis28" target="_blank" class="text-gray-400 hover:text-brand-500 transition-colors" title="Facebook Officiel">
+                        <i class="fa-brands fa-facebook-f text-lg"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-brand-500 text-xs sm:text-sm transition-colors">Mentions légales</a>
+                    <a href="#" class="text-gray-400 hover:text-brand-500 text-xs sm:text-sm transition-colors">CGV</a>
+                </div>
+            </div>
         </div>
     </footer>
 
@@ -1124,7 +1208,7 @@
                     <ul class="list-disc pl-5 space-y-2 mt-4">
                         <li><strong>Chambre d'hôtel :</strong> 30.000F ou 40.000F / Séjour 24H avec petit déjeuner.</li>
                         <li><strong>Restauration :</strong> À l'assiette à partir de 20.000F pour 2 personnes.</li>
-                        <li><strong>Traversée (Bietry) :</strong> 10.000F / pers (Gratuit 0-5 ans, Moitié prix 5-12 ans). Accès aux activités inclus.</li>
+                        <li><strong>Traversée (Bietry) :</strong> 10.   000F / pers (Gratuit 0-5 ans, Moitié prix 5-12 ans). Accès aux activités inclus.</li>
                     </ul>
                 `
             },
@@ -1637,13 +1721,51 @@
             }
         ];
 
-        // === LOGIQUE DE RENDU DU CATALOGUE ===
+        // === LOGIQUE DE RENDU DU CATALOGUE ET DE RECHERCHE ===
+        let currentFilter = 'all';
+
+        function handleSearch() {
+            renderCatalog(currentFilter);
+        }
+
+        function filterCatalog(category) {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active', 'bg-dark', 'text-white', 'border-dark');
+                btn.classList.add('bg-white', 'text-gray-700', 'border-gray-300');
+            });
+            
+            const activeBtn = document.getElementById('btn-filter-' + category);
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-white', 'text-gray-700', 'border-gray-300');
+                activeBtn.classList.add('active'); 
+            }
+
+            currentFilter = category;
+            renderCatalog(currentFilter);
+        }
+
         function renderCatalog(filter = 'all') {
             const grid = document.getElementById('catalog-grid');
             grid.innerHTML = '';
+            
+            const searchInput = document.getElementById('search-input');
+            const searchTerm = searchInput ? searchInput.value.toLowerCase().trim() : '';
+
+            let hasResults = false;
 
             catalogData.forEach(item => {
-                if (filter === 'all' || item.category === filter) {
+                // Vérification du filtre (bouton)
+                const matchesFilter = (filter === 'all' || item.category === filter);
+                
+                // Vérification de la recherche textuelle
+                const matchesSearch = searchTerm === '' || 
+                                      item.title.toLowerCase().includes(searchTerm) || 
+                                      item.location.toLowerCase().includes(searchTerm) || 
+                                      item.shortDesc.toLowerCase().includes(searchTerm) ||
+                                      item.fullDesc.toLowerCase().includes(searchTerm);
+
+                if (matchesFilter && matchesSearch) {
+                    hasResults = true;
                     const card = document.createElement('div');
                     card.className = 'catalog-card bg-white rounded-3xl overflow-hidden border border-gray-100 flex flex-col h-full transform transition-all';
                     card.innerHTML = `
@@ -1666,6 +1788,19 @@
                     grid.appendChild(card);
                 }
             });
+
+            // Afficher un message si aucun résultat
+            if (!hasResults) {
+                grid.innerHTML = `
+                    <div class="col-span-full text-center py-12">
+                        <div class="w-16 h-16 bg-gray-100 text-gray-400 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-dark mb-2">Aucun résultat trouvé</h3>
+                        <p class="text-gray-500">Essayez de modifier vos termes de recherche ou de changer de catégorie.</p>
+                    </div>
+                `;
+            }
         }
 
         // === GESTION DU MODAL ===
@@ -1720,20 +1855,6 @@
                 modal.classList.remove('flex');
                 document.body.style.overflow = 'auto'; // Rétablir le scroll
             }, 300);
-        }
-
-        // === LOGIQUE DE NAVIGATION ET FILTRES ===
-        function filterCatalog(category) {
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.classList.remove('active', 'bg-dark', 'text-white', 'border-dark');
-                btn.classList.add('bg-white', 'text-gray-700', 'border-gray-300');
-            });
-            
-            const activeBtn = document.getElementById('btn-filter-' + category);
-            activeBtn.classList.remove('bg-white', 'text-gray-700', 'border-gray-300');
-            activeBtn.classList.add('active'); 
-
-            renderCatalog(category);
         }
 
         function navigate(pageId, isMobile = false) {
@@ -1820,7 +1941,7 @@
             }
         });
 
-        // === FORMULAIRE ET WHATSAPP ===
+        // === FORMULAIRE, WHATSAPP ET EMAIL ===
         function prefillReservation(nomLieu, typeService) {
             document.getElementById('lieu').value = nomLieu;
             
@@ -1878,6 +1999,54 @@
             
             document.getElementById('whatsappForm').reset();
             document.getElementById('lieu').value = ''; 
+        }
+
+        function sendToEmail() {
+            const form = document.getElementById('whatsappForm');
+            if (!form.reportValidity()) return;
+
+            const nom = document.getElementById('nom').value.trim();
+            const prenoms = document.getElementById('prenoms').value.trim();
+            const service = document.getElementById('service').value;
+            const lieu = document.getElementById('lieu').value.trim();
+            const date = document.getElementById('date').value;
+            const message = document.getElementById('message').value.trim();
+
+            const dateObj = new Date(date);
+            let formattedDate = date; 
+
+            if (!isNaN(dateObj)) {
+                formattedDate = dateObj.toLocaleDateString('fr-FR', {
+                    day: '2-digit', month: '2-digit', year: 'numeric'
+                });
+            }
+
+            const subject = `Réservation : ${service} - ${nom.toUpperCase()} ${prenoms}`;
+            
+            let emailBody = `NOUVELLE RÉSERVATION\n\n`;
+            emailBody += `Client : ${nom.toUpperCase()} ${prenoms}\n`;
+            emailBody += `Service demandé : ${service}\n`;
+            if (lieu) {
+                emailBody += `Établissement/Activité : ${lieu}\n`;
+            }
+            emailBody += `Date prévue : ${formattedDate}\n`;
+            
+            if (message) {
+                emailBody += `\nDétails supplémentaires :\n${message}\n`;
+            }
+
+            emailBody += `\nDemande envoyée depuis le site officiel.`;
+
+            const encodedSubject = encodeURIComponent(subject);
+            const encodedBody = encodeURIComponent(emailBody);
+            
+            const mailtoLink = `mailto:sonayewenceslas@gmail.com?subject=${encodedSubject}&body=${encodedBody}`;
+            const link = document.createElement('a');
+            link.href = mailtoLink;
+            link.target = '_top'; 
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         }
     </script>
 </body>
